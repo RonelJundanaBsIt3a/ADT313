@@ -1,0 +1,123 @@
+.Login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.6)), 
+              url('bg.jpg') center/cover no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-container {
+  width: 360px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Adds a subtle blur effect */
+  box-shadow: 0px 4px 10px rgba(182, 18, 18, 0.968);
+  padding: 2rem;
+  color: #ffffff; /* Ensures text is visible */
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.main-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* White text for readability */
+  font-weight: bold;
+  text-align: center;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8); /* Lightly opaque background for inputs */
+  color: #333333;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  background: rgba(255, 255, 255, 1); /* Fully opaque on focus */
+}
+
+
+.submit-container {
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #3498db, #1abc9c);
+  padding: 0.75rem;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #2980b9, #16a085);
+}
+
+.register-container {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555555;
+  text-align: center;
+}
+
+.register-container a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
