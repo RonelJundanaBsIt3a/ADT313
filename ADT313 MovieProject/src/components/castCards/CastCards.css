@@ -1,0 +1,39 @@
+.card-cast-data {
+    max-width: 181px;
+    border: 20px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+}
+
+.card-cast-data img {
+    max-width: 181px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card-cast-data:hover {
+    border: 20px solid #373745;
+    background-color: #373745;
+    color:white
+}
+
+.spacing-cast-card {
+    margin: 8px 0px;
+}
+
+.cast-characterName-card {
+    font-size: 12pt;
+}
+
+@media (max-width: 500px) {
+    .card-cast-data img {
+        max-width: 118px;
+    }
+
+    .card-cast-data {
+        max-width: 118px;
+        font-size: 10pt;
+    }
+}

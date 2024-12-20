@@ -1,0 +1,240 @@
+/* Movie card container */
+.container-movie-card {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   overflow-x: hidden;
+   overflow-y: auto;
+   scrollbar-width: thin; /* Modern thin scrollbar */
+   -ms-overflow-style: none; /* Hide default scrollbar in IE */
+   background-color: #121212; /* Dark background for contrast */
+}
+
+/* Movie poster styling */
+.View-Movie-Poster {
+   width: 100%;
+   border-radius: 15px;
+   background-color: #222222; /* Slightly lighter black */
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.View-Movie-Poster:hover {
+   transform: scale(1.05); /* Slight zoom effect */
+   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Banner styling */
+.banner {
+   width: 20%;
+   z-index: 1;
+   border-radius: 15px;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Movie tab info section */
+.Movie-Tab-Info {
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+   gap: 30px;
+   position: relative;
+   margin-top: 100px;
+   background-color: #1e1e1e; /* Darker background for section */
+   border-radius: 20px;
+}
+
+/* Backdrop image styling */
+.image-backdropPath {
+   position: relative;
+}
+
+.background-overlay {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+}
+
+/* Info styling */
+.info-movie-flex {
+   font-size: 14px;
+   width: 400px;
+   color: #f5f5f5; /* Light text */
+   z-index: 1;
+}
+
+.overview-h3 {
+   font-weight: 300;
+}
+
+/* Horizontal slide viewer */
+.Slide-Viewer {
+   display: flex;
+   gap: 20px;
+   padding: 15px;
+   overflow-x: auto;
+   background-color: #141414; /* Dark background */
+}
+
+.Slide-Viewer::-webkit-scrollbar {
+   height: 10px;
+   width: 10px;
+}
+
+.Slide-Viewer::-webkit-scrollbar-track {
+   background-color: #333333;
+   border-radius: 10px;
+}
+
+.Slide-Viewer::-webkit-scrollbar-thumb {
+   background-color: #555555;
+   border-radius: 10px;
+}
+
+.Slide-Viewer::-webkit-scrollbar-thumb:hover {
+   background-color: #777777;
+}
+
+/* Tab header styling */
+.Tab-Viewer-h1 {
+   padding: 10px 0px 0px 20px;
+   background-color: #222222;
+   color: #ffffff;
+   font-size: 22px;
+   font-weight: bold;
+}
+
+/* Slider background color */
+.Slider-Color {
+   background-color: #111111; /* Dark slider background */
+}
+
+/* Modal styling */
+.modal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   position: fixed;
+   z-index: 1;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgba(16, 16, 27, 0.9); /* Dark background with opacity */
+}
+
+.close-web-btn {
+   position: absolute;
+   top: 15px;
+   right: 35px;
+   color: #ffffff;
+   font-size: 30px;
+   transition: 0.3s;
+   cursor: pointer;
+}
+
+.close-web-btn:hover {
+   color: #f44336; /* Red hover effect for close button */
+}
+
+/* Modal container content */
+.modal-container-content {
+   display: block;
+   width: 96%;
+   max-width: 700px;
+   border-radius: 20px;
+   animation-name: zoom;
+   animation-duration: 0.6s;
+}
+
+.modal-container-content-video {
+   display: block;
+   width: 100%;
+   height: 100%;
+   max-width: 700px;
+   max-height: 394px;
+   border-radius: 15px;
+   animation-name: zoom;
+   animation-duration: 0.6s;
+}
+
+/* Zoom animation */
+@keyframes zoom {
+   from {
+      transform: scale(0);
+   }
+   to {
+      transform: scale(1);
+   }
+}
+
+/* Caption photo style */
+.caption-photo {
+   display: block;
+   width: 80%;
+   max-width: 700px;
+   text-align: center;
+   color: #f1f1f1;
+   padding: 10px 0;
+   font-style: italic;
+}
+
+/* Not found message */
+.not-found-message {
+   color: #e45151;
+   text-align: center;
+   font-style: italic;
+   padding: 10px;
+   margin: 10px 0;
+}
+
+/* Mobile view */
+@media (max-width: 800px) {
+   .Movie-Tab-Info {
+      display: block;
+      text-align: center;
+      padding: 15px;
+   }
+
+   .image-backdropPath {
+      margin: 0 auto;
+      width: 80%;
+      height: auto;
+   }
+
+   .info-movie-flex {
+      font-size: 12px;
+      width: 90%;
+      color: white;
+      margin: 20px auto;
+      text-align: center;
+   }
+
+   .banner {
+      width: 80%;
+      margin: 10px auto;
+   }
+
+   .Tab-Viewer-h1 {
+      font-size: 18pt;
+      padding: 10px 0px 5px 20px;
+      color: #ffffff;
+      background-color: #222222;   
+   }
+
+   .View-Movie-Poster {
+      width: 80%;
+      margin: 0 auto;
+   }
+
+   .modal-container-content-video {
+      width: 90%;
+      height: 80%;
+   }
+}

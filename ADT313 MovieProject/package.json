@@ -1,12 +1,15 @@
 {
-  "name": "admin-dashboard-Ronel-Jundana-bsit3a",
+  "name": "admin-dashboard-Jundana-Ronel-bsit3a",
   "version": "0.1.0",
   "private": true,
+  "author": "Ronel Jundana",
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "admin-dashboard-Ronel-Jundana-bsit3a": "file:",
+    "admin-dashboard-Jundana-Ronel-bsit3a": "file:",
     "axios": "^1.7.7",
     "http-proxy-middleware": "^3.0.2",
     "react": "^18.3.1",

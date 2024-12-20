@@ -1,0 +1,123 @@
+.lists-container {
+  width: 100%;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+}
+
+.edit-button,
+.delete-movie-button {
+  width: 120px;
+  height: 45px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.delete-movie-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-movie-button:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  padding-bottom: 2rem;
+}
+
+.movie-lists {
+  width: 90%;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-spacing: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.movie-lists th {
+  font-weight: bold;
+  padding: 16px;
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+}
+
+.movie-lists td {
+  padding: 12px;
+  text-align: center;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+}
+
+.movie-lists tr:hover {
+  background-color: #f1f1f1;
+}
+
+.top-context>button {
+  height: 50px;
+  width: 180px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 30px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-context>button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .movie-lists {
+    width: 100%;
+  }
+
+  .top-context>button {
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .edit-button,
+  .delete-movie-button {
+    width: 100px;
+    font-size: 14px;
+  }
+}

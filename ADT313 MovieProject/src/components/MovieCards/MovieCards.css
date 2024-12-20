@@ -1,14 +1,31 @@
-.card {
-  max-width: 180px;
-  border: 20px solid #867f7f;
-  background-color: #898989;
+.card-movie {
+  max-width: 181px;
+  border: 20px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  color: #2d2d2d;
+  text-align: center;
+  font-weight: bolder;
 }
-.card img {
-  max-width: 180px;
+
+.card-movie img {
+  max-width: 181px;
   object-fit: contain;
 }
 
-.card:hover {
-  border: 20px solid #3f3f3f;
-  background-color: #3f3f3f;
+@media (max-width: 500px) {
+  .card-movie img {
+    max-width: 118px;
+  }
+
+  .card-movie {
+    max-width: 118px;
+    font-size: 8pt;
+  }
+}
+
+.card-movie:hover {
+  border: 20px solid #373745;
+  background-color: #373745;
+  color: white;
 }

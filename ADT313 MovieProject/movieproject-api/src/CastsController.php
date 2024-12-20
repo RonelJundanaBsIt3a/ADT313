@@ -1,7 +1,7 @@
 <?php
 class CastsController
 {
-    public function __construct(private CastGateway $gateway, private Auth $auth)
+    public function __construct(private CastsGateway $gateway, private Auth $auth)
     {
 
     }

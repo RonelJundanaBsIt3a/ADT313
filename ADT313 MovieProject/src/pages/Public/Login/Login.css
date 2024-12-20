@@ -1,123 +1,132 @@
-.Login {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.651), rgba(0, 0, 0, 0.6)), 
-              url('bg.jpg') center/cover no-repeat;
-  position: relative;
-  overflow: hidden;
+
+.Login_main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+   
+    background-size: cover;
 }
 
-.main-container {
-  width: 360px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Adds a subtle blur effect */
-  box-shadow: 0px 4px 10px rgba(182, 18, 18, 0.968);
-  padding: 2rem;
-  color: #ffffff; /* Ensures text is visible */
-  display: flex;
-  flex-direction: column;
-  animation: fadeIn 1s ease-in-out;
+.Login_form-container {
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+   
+    width: 90%;
+    max-width: 420px;
+    
+    animation: fadeIn 0.5s ease-in-out;
+   
 }
 
-.main-container h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #ffffff; /* White text for readability */
-  font-weight: bold;
-  text-align: center;
+.Login_form-container>h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-.form-group input {
-  padding: 0.75rem;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.8); /* Lightly opaque background for inputs */
-  color: #333333;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease;
+.Login_form-container>div {
+    margin-bottom: 1rem;
 }
 
-.form-group input:focus {
-  border-color: #3498db;
-  background: rgba(255, 255, 255, 1); /* Fully opaque on focus */
+.Login_form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
 }
 
-
-.submit-container {
-  margin-top: 1rem;
+.Login_form-group label {
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-size: 1rem;
 }
 
-.btn-primary {
-  display: block;
-  width: 100%;
-  background: linear-gradient(90deg, #3498db, #1abc9c);
-  padding: 0.75rem;
-  text-align: center;
-  color: #ffffff;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.errors {
+    margin-top: -0.5rem;
+    color: red;
+    font-size: 0.9rem;
+    text-align: left;
+    width: 100%;
 }
 
-.btn-primary:hover {
-  background: linear-gradient(90deg, #2980b9, #16a085);
+.Login_container {
+    margin-top: 1.5rem;
+    text-align: center;
 }
 
-.register-container {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #555555;
-  text-align: center;
+.Login_show-password {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
 }
 
-.register-container a {
-  color: #3498db;
-  text-decoration: none;
-  font-weight: bold;
+.Login_show-password>label {
+    margin-left: 0.5rem;
+    color: #555;
 }
 
-.register-container a:hover {
-  text-decoration: underline;
+.Login-container>button {
+    width: 100%;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.loading-spinner {
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(0, 0, 0, 0.1);
-  border-top: 3px solid #3498db;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  display: inline-block;
-  margin: auto;
+.Login-container>button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.Login-container>button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
+
+.Login_form-group input[type="text" i],
+.Login_form-group input[type="password" i] {
+    padding: 0.5rem;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.Login_form-group input[type="text" i]:focus,
+.Login_form-group input[type="password" i]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

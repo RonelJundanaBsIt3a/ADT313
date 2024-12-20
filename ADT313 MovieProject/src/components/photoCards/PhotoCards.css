@@ -1,0 +1,31 @@
+.card-photo-data {
+    max-width: 281px;
+    border: 20px solid rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+}
+
+.card-photo-data img {
+    max-width: 281px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.card-photo-data:hover {
+    border: 20px solid #373745;
+    background-color: #373745;
+    color: white;
+}
+
+@media (max-width: 500px) {
+    .card-photo-data img {
+        max-width: 181px;
+    }
+
+    .card-photo-data {
+        max-width: 181px;
+        font-size: 8pt;
+    }
+}

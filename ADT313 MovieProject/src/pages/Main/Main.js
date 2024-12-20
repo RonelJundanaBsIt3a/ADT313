@@ -1,31 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useContext, useCallback, useState } from 'react';
+import { AuthContext } from '../../utils/context/AuthContext';
 import { Outlet, useNavigate } from 'react-router-dom';
 import './Main.css';
 
 function Main() {
-  const accessToken = localStorage.getItem('accessToken');
+  const { auth, clearAuthData } = useContext(AuthContext);
   const navigate = useNavigate();
-
-  // State to manage loading status
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-  const handleLogout = () => {
-    const confirmLogout = window.confirm('Are you sure you want to logout?'); // Ask for confirmation
-    if (confirmLogout) {
-      setIsLoggingOut(true); // Show loading spinner
-      setTimeout(() => {
-        localStorage.removeItem('accessToken');
-        setIsLoggingOut(false); // Hide loading spinner
-        navigate('/login'); // Redirect to login page after logout
-      }, 3000); // 3-second delay before navigating
-    }
+  const handleResetTab = () => {
+    localStorage.setItem('tab', JSON.stringify('cast'));
   };
 
-  useEffect(() => {
-    if (!accessToken) { // Simplified check for accessToken
-      navigate('/login'); // Redirect to login if no access token
+  const handleLogout = useCallback(() => {
+    const confirmLogout = window.confirm('Are you sure you want to logout?'); // Ask for confirmation
+    if (confirmLogout) {
+      setIsLoggingOut(true); 
+      setTimeout(() => {
+        clearAuthData(); 
+        setIsLoggingOut(false); 
+        navigate('/');
+      }, 3000);
     }
-  }, [accessToken, navigate]); // Added accessToken and navigate as dependencies
+  }, [clearAuthData, navigate]);
+
+  useEffect(() => {
+    if (!auth.accessToken) {
+      handleLogout();
+    }
+  }, [auth.accessToken, handleLogout]);
 
   return (
     <div className="Main">
@@ -33,18 +36,12 @@ function Main() {
         <div className="navigation">
           <ul>
             <li>
-              {/* Disable navigation for Movies */}
-              <a
-                style={{ pointerEvents: 'none', color: 'gray', cursor: 'not-allowed' }}
-                onClick={(e) => e.preventDefault()}
-              >
-                ADT Movies
-              </a>
+              <a onClick={() => navigate('/main/dashboard')}>Dashboard</a>
             </li>
             <li>
-              <a onClick={() => navigate('/home')}>Home</a>
+              <a onClick={() => navigate('/main/movies')}>Movies</a>
             </li>
-            {accessToken ? (
+            {auth.accessToken ? (
               <li className="logout">
                 <a onClick={handleLogout}>Log Out</a>
               </li>
@@ -57,7 +54,7 @@ function Main() {
         </div>
         <div className="outlet">
           {isLoggingOut ? (
-            <div className="loading-spinner"></div>
+            <div className="loading">Logging out...</div> 
           ) : (
             <Outlet />
           )}

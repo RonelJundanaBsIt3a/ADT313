@@ -1,0 +1,232 @@
+/* Body background color */
+body {
+  background-color: rgb(41, 43, 52);
+  font-family: 'Arial', sans-serif; /* Add a clean, modern font */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container for content */
+.main-container {
+  height: 80vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+  padding: 20px;
+}
+
+/* Page title styling */
+.page-title {
+  font-size: 4.5rem;
+  color: #f1f1f1; /* Lighter color for contrast */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* List container for movie cards */
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  background-color: #222; /* Dark background to match body */
+  padding: 10px;
+}
+
+/* Featured movie list container */
+.featured-list-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 4rem;
+  aspect-ratio: 11 / 4;
+  border-radius: 15px;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #1e1e1e; /* Slightly lighter for contrast */
+}
+
+.featured-list-container-loader {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.featured-backdrop {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured-movie-title {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #fff;
+  padding: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Enhance text visibility */
+}
+
+/* Movie description section */
+.Movies-Title-Description {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  background-color: rgba(53, 58, 63, 0.8);
+  border-radius: 15px;
+}
+
+.Title-Description-Box {
+  width: 80%;
+  max-width: 800px;
+  margin-left: 10px;
+}
+
+.overview-movies-p {
+  width: 100%;
+  color: #fff;
+}
+
+/* Poster image styling */
+.PostPath-Img {
+  width: 20%;
+}
+
+.img-postpath-auto {
+  width: 100%;
+  height: fit-content;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-postpath-auto:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 2px 4px 6px #627f98;
+}
+
+/* Movie list title styling */
+.title-text-movie-lists {
+  font-size: 30pt;
+  text-align: center;
+  color: #f1f1f1; /* Lighter color for readability */
+  margin-top: 20px;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 990px) {
+  .main-container {
+    height: auto;
+    padding: 10px;
+  }
+
+  .featured-list-container {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .featured-backdrop {
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .Movies-Title-Description {
+    padding: 15px;
+    flex-direction: column;
+  }
+
+  .PostPath-Img {
+    width: 60%;
+    margin-bottom: 1rem;
+  }
+
+  .Title-Description-Box {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .img-postpath-auto {
+    width: 100%;
+    height: auto;
+  }
+
+  .title-movies-h1-2 {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  .title-text-movie-lists {
+    font-size: 24pt;
+  }
+
+  .movies-list {
+    margin-top: 0;
+  }
+}
+
+/* Tablet view (max-width: 768px) */
+@media (max-width: 768px) {
+  .featured-list-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-backdrop {
+    height: 50%;
+    background-size: cover;
+  }
+
+  .PostPath-Img {
+    width: 80%;
+    margin-bottom: 0.5rem;
+  }
+
+  .Movies-Title-Description {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .Title-Description-Box {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Small mobile view (max-width: 480px) */
+@media (max-width: 480px) {
+  .featured-movie-title {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .PostPath-Img {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .Movies-Title-Description {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .Title-Description-Box {
+    width: 100%;
+  }
+
+  .title-text-movie-lists {
+    font-size: 20pt;
+  }
+}
